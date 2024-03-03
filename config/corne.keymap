@@ -32,6 +32,29 @@
             tapping-term-ms = <5000>;
             flavor = "tap-preferred";
         };
+
+        del: del {
+            compatible = "zmk,behavior-mod-morph";
+            label = "del";
+            bindings = <&kp BACKSPACE>, <&kp DEL>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_RCTL)>;
+        };
+
+        lbkt: lbkt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "lbkt";
+            #binding-cells = <0>;
+            bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
+        };
+
+        rbkt: rbkt {
+            compatible = "zmk,behavior-tap-dance";
+            label = "rbkt";
+            #binding-cells = <0>;
+            bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
+        };
     };
 
     keymap {
@@ -46,10 +69,10 @@
 
             display-name = "Base";
             bindings = <
-&kp LS(LPAR)  &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp LS(RPAR)
-&kp LBKT      &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp RBKT
-&kp LS(LT)    &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp LS(GT)
-                                         &kp TAB      &kp LA(BSPC)  &kp SPACE    &kp RET  &mo 1         &kp ESC
+&trans  &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &trans
+&lbkt   &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &rbkt
+&to 2   &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &to 1
+                                   &kp TAB      &mo 2         &kp SPACE    &kp RET  &mo 1         &kp ESC
             >;
 
             label = "base";
@@ -60,10 +83,19 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &trans
-                        &trans  &trans  &trans    &trans  &trans    &trans
+                        &trans  &trans  &del      &trans  &trans    &trans
             >;
 
             label = "nav";
+        };
+
+        utils {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp GRAVE  &trans
+&kp LT  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans     &kp GT
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &kp PIPE   &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
+            >;
         };
     };
 };
