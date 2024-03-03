@@ -46,10 +46,10 @@
 
             display-name = "Base";
             bindings = <
-&kp LS(LPAR)  &kp Q         &kp W  &kp F    &kp P         &kp B        &kp J    &kp L  &kp U      &kp Y    &kp SQT   &kp LS(RPAR)
-&kp LBKT      &hrm LSHFT A  &kp R  &kp S    &kp T         &kp G        &kp M    &kp N  &kp E      &kp I    &kp O     &kp RBKT
-&kp LS(LT)    &kp Z         &kp X  &kp C    &kp D         &kp V        &kp K    &kp H  &kp COMMA  &kp DOT  &kp FSLH  &kp LS(GT)
-                                   &kp TAB  &kp LA(BSPC)  &kp SPACE    &kp RET  &mo 1  &kp ESC
+&kp LS(LPAR)  &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp LS(RPAR)
+&kp LBKT      &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp RBKT
+&kp LS(LT)    &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp LS(GT)
+                                         &kp TAB      &kp LA(BSPC)  &kp SPACE    &kp RET  &mo 1         &kp ESC
             >;
 
             label = "base";
