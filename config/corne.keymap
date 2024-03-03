@@ -34,6 +34,16 @@
         };
     };
 
+    macros {
+        cp: cp {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&none>, <&macro_tap>, <&kp RC(U)>;
+
+            label = "CP";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -57,10 +67,10 @@
 
         nav {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &trans
+                        &trans  &trans  &trans    &trans  &trans    &trans
             >;
 
             label = "nav";
