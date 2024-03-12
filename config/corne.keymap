@@ -70,21 +70,12 @@
             display-name = "Base";
             bindings = <
 &lbkt  &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &rbkt
-&to 1  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &to 2
-&to 0  &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &to 3
-                                  &kp TAB      &mo 1         &kp SPACE    &kp RET  &mo 2         &kp ESC
+&to 3  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &to 1
+&to 0  &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &to 2
+                                  &kp TAB      &mo 3         &kp SPACE    &kp RET  &mo 1         &kp ESC
             >;
 
             label = "BASE";
-        };
-
-        NUM {
-            bindings = <
-&trans  &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)   &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &trans
-&trans  &kp N1        &kp N2      &kp N3         &kp N4         &kp N5           &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &trans
-&trans  &kp MINUS     &kp EQUAL   &kp GRAVE      &kp BACKSLASH  &trans           &trans         &trans        &trans        &trans        &trans        &trans
-                                  &trans         &trans         &trans           &trans         &trans        &to 0
-            >;
         };
 
         NAV {
@@ -103,19 +94,17 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans      &trans         &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans      &trans         &trans
-                        &trans  &trans  &trans    &trans  &trans        &trans
+                        &trans  &trans  &del      &trans  &trans        &trans
             >;
         };
 
-        MOUSE {
+        NUM {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans          &trans          &trans        &trans           &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans    &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_UP  &mmv MOVE_RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans    &trans          &trans          &trans        &trans           &trans
-                        &trans  &trans  &mkp MB1    &mkp MB2  &trans          &trans
+&trans  &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)   &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &trans
+&trans  &kp N1        &kp N2      &kp N3         &kp N4         &kp N5           &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &trans
+&trans  &kp MINUS     &kp EQUAL   &kp GRAVE      &kp BACKSLASH  &trans           &trans         &trans        &trans        &trans        &trans        &trans
+                                  &trans         &trans         &trans           &trans         &trans        &to 0
             >;
-
-            label = "MOUSE";
         };
     };
 };
