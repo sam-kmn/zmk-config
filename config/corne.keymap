@@ -96,6 +96,8 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans      &trans         &trans
                         &trans  &trans  &del      &trans  &trans        &trans
             >;
+
+            label = "EDIT";
         };
 
         NUM {
@@ -105,6 +107,8 @@
 &trans  &kp MINUS     &kp EQUAL   &kp GRAVE      &kp BACKSLASH  &trans           &trans         &trans        &trans        &trans        &trans        &trans
                                   &trans         &trans         &trans           &trans         &trans        &to 0
             >;
+
+            label = "NUM";
         };
     };
 };
