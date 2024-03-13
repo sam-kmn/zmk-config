@@ -107,10 +107,10 @@
 
         EDIT {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans      &trans         &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans      &trans         &trans
-                        &trans  &del    &trans    &trans  &trans        &trans
+&trans  &trans  &trans      &trans      &trans       &trans    &trans  &trans        &kp K_UNDO    &trans      &trans         &trans
+&trans  &trans  &kp K_REDO  &trans      &trans       &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans
+&trans  &trans  &kp K_CUT   &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans        &trans        &trans      &trans         &trans
+                            &trans      &del         &trans    &trans  &trans        &trans
             >;
 
             label = "EDIT";
