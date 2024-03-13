@@ -88,7 +88,7 @@
 &lbkt  &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &rbkt
 &to 3  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &to 1
 &to 0  &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &to 2
-                                  &kp TAB      &htl 3 3      &kp SPACE    &kp RET  &tdl          &kp ESC
+                                  &kp TAB      &del          &kp SPACE    &kp RET  &tdl          &kp ESC
             >;
 
             label = "BASE";
