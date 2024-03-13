@@ -55,6 +55,22 @@
             #binding-cells = <0>;
             bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
         };
+
+        tdl: tdl {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TDL";
+            #binding-cells = <0>;
+            bindings = <&mo 1>, <&mo 2>;
+        };
+
+        htl: htl {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HTL";
+            bindings = <&mo>, <&to>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -72,7 +88,7 @@
 &lbkt  &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &rbkt
 &to 3  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &to 1
 &to 0  &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &to 2
-                                  &kp TAB      &mo 3         &kp SPACE    &kp RET  &mo 1         &kp ESC
+                                  &kp TAB      &htl 3 3      &kp SPACE    &kp RET  &tdl          &kp ESC
             >;
 
             label = "BASE";
@@ -83,7 +99,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &trans
-                        &trans  &trans  &del      &trans  &trans    &trans
+                        &trans  &del    &trans    &trans  &trans    &trans
             >;
 
             label = "NAV";
@@ -94,7 +110,7 @@
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans      &trans         &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans      &trans         &trans
-                        &trans  &trans  &del      &trans  &trans        &trans
+                        &trans  &del    &trans    &trans  &trans        &trans
             >;
 
             label = "EDIT";
@@ -102,10 +118,10 @@
 
         NUM {
             bindings = <
-&trans  &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)   &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &trans
-&trans  &kp N1        &kp N2      &kp N3         &kp N4         &kp N5           &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &trans
-&trans  &kp MINUS     &kp EQUAL   &kp GRAVE      &kp BACKSLASH  &trans           &trans         &trans        &trans        &trans        &trans        &trans
-                                  &trans         &trans         &trans           &trans         &trans        &to 0
+&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp LS(EXCL)   &kp LS(AT)    &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &trans
+&trans  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)   &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &kp MINUS      &kp EQUAL     &kp SQT        &kp BSLH      &trans         &trans
+                        &trans  &del    &trans    &trans         &trans        &to 0
             >;
 
             label = "NUM";
