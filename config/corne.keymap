@@ -47,6 +47,8 @@
             label = "lbkt";
             #binding-cells = <0>;
             bindings = <&kp LPAR>, <&kp LBRC>, <&kp LBKT>;
+
+            tapping-term-ms = <300>;
         };
 
         rbkt: rbkt {
@@ -54,6 +56,8 @@
             label = "rbkt";
             #binding-cells = <0>;
             bindings = <&kp RPAR>, <&kp RBRC>, <&kp RBKT>;
+
+            tapping-term-ms = <300>;
         };
 
         tdl: tdl {
@@ -73,6 +77,22 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        ESC_BASE {
+            bindings = <&to 0>;
+            key-positions = <41>;
+            layers = <1 2 3>;
+        };
+
+        CTRL_EDIT {
+            bindings = <&mo 2>;
+            key-positions = <19 40>;
+            layers = <0>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -85,10 +105,10 @@
 
             display-name = "Base";
             bindings = <
-&lbkt  &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &rbkt
-&to 3  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &to 1
-&to 0  &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &to 2
-                                  &kp TAB      &del          &kp SPACE    &kp RET  &tdl          &kp ESC
+&lbkt   &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &rbkt
+&trans  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &trans
+&trans  &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &trans
+                                   &kp TAB      &del          &kp SPACE    &kp RET  &tdl          &lt 0 ESC
             >;
 
             label = "BASE";
@@ -97,7 +117,7 @@
         NAV {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &to 1
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &trans
                         &trans  &del    &trans    &trans  &trans    &trans
             >;
@@ -107,8 +127,8 @@
 
         EDIT {
             bindings = <
-&trans  &trans  &trans      &trans      &trans       &trans    &trans  &trans        &kp K_UNDO    &trans      &trans         &trans
-&trans  &trans  &kp K_REDO  &trans      &trans       &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans
+&trans  &trans  &trans      &kp K_FIND  &kp K_PASTE  &trans    &trans  &trans        &kp K_UNDO    &kp K_COPY  &trans         &trans
+&trans  &trans  &kp K_REDO  &trans      &trans       &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &to 2
 &trans  &trans  &kp K_CUT   &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans        &trans        &trans      &trans         &trans
                             &trans      &del         &trans    &trans  &trans        &trans
             >;
@@ -119,7 +139,7 @@
         NUM {
             bindings = <
 &trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp LS(EXCL)   &kp LS(AT)    &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &trans
-&trans  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)   &trans
+&trans  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)   &to 3
 &trans  &trans  &trans  &trans  &trans  &trans    &kp MINUS      &kp EQUAL     &kp SQT        &kp BSLH      &trans         &trans
                         &trans  &del    &trans    &trans         &trans        &to 0
             >;
