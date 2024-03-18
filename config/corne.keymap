@@ -75,20 +75,27 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        smart_nav: smart_nav {
+            compatible = "zmk,behavior-caps-word";
+            label = "smart_nav";
+            #binding-cells = <0>;
+            continue-list = <UP DOWN LEFT RIGHT>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
 
-        ESC_BASE {
-            bindings = <&to 0>;
-            key-positions = <41>;
-            layers = <1 2 3>;
-        };
-
         CTRL_EDIT {
             bindings = <&mo 2>;
             key-positions = <19 40>;
+            layers = <0>;
+        };
+
+        CAPS_WORD {
+            bindings = <&caps_word>;
+            key-positions = <13 22>;
             layers = <0>;
         };
     };
@@ -105,10 +112,10 @@
 
             display-name = "Base";
             bindings = <
-&lbkt   &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &rbkt
-&trans  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &trans
-&trans  &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &trans
-                                   &kp TAB      &del          &kp SPACE    &kp RET  &tdl          &lt 0 ESC
+&kp LEFT_PARENTHESIS  &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp RIGHT_PARENTHESIS
+&kp LBKT              &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp RBKT
+&kp GRAVE             &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp BACKSLASH
+                                                 &kp TAB      &del          &kp SPACE    &kp RET  &tdl          &mo 2
             >;
 
             label = "BASE";
@@ -117,7 +124,7 @@
         NAV {
             bindings = <
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &to 1
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
 &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &trans
                         &trans  &del    &trans    &trans  &trans    &trans
             >;
@@ -128,7 +135,7 @@
         EDIT {
             bindings = <
 &trans  &trans  &trans      &kp K_FIND  &kp K_PASTE  &trans    &trans  &trans        &kp K_UNDO    &kp K_COPY  &trans         &trans
-&trans  &trans  &kp K_REDO  &trans      &trans       &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &to 2
+&trans  &trans  &kp K_REDO  &trans      &trans       &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans
 &trans  &trans  &kp K_CUT   &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans        &trans        &trans      &trans         &trans
                             &trans      &del         &trans    &trans  &trans        &trans
             >;
@@ -138,10 +145,10 @@
 
         NUM {
             bindings = <
-&trans  &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp LS(EXCL)   &kp LS(AT)    &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)  &trans
-&trans  &kp N6  &kp N7  &kp N8  &kp N9  &kp N0    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)   &kp LS(LPAR)  &kp LS(RPAR)   &to 3
-&trans  &trans  &trans  &trans  &trans  &trans    &kp MINUS      &kp EQUAL     &kp SQT        &kp BSLH      &trans         &trans
-                        &trans  &del    &trans    &trans         &trans        &to 0
+&trans  &trans  &kp N7  &kp N8  &kp N9  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp N4  &kp N5  &kp N6  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &kp N1  &kp N2  &kp N3  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
 
             label = "NUM";
