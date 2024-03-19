@@ -84,6 +84,34 @@
         };
     };
 
+    macros {
+        curly: curly {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE>, <&macro_tap>;
+
+            label = "CURLY";
+        };
+
+        round: round {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings =
+                <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS>,
+                <&macro_tap>;
+
+            label = "ROUND";
+        };
+
+        square: square {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LEFT_BRACKET &kp RIGHT_BRACKET>, <&macro_tap>;
+
+            label = "SQUARE";
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -96,10 +124,10 @@
 
             display-name = "Base";
             bindings = <
-&kp LEFT_PARENTHESIS  &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp RIGHT_PARENTHESIS
-&kp LBKT              &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp RBKT
-&kp GRAVE             &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp PIPE
-                                                 &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &nav_edit     &lt 3 ESC
+&round   &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp MINUS
+&square  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp SEMI
+&curly   &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp PIPE
+                                    &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &nav_edit     &lt 3 ESC
             >;
 
             label = "BASE";
@@ -129,10 +157,10 @@
 
         NUM {
             bindings = <
-&kp LS(LT)    &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &kp DOUBLE_QUOTES  &kp LS(GT)
-&kp LS(LPAR)  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &trans             &kp LS(RPAR)
-&trans        &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &trans             &trans
-                              &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &kp GRAVE  &kp EQUAL
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &trans     &kp LS(RPAR)
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &trans     &kp AMPERSAND
+                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
 
             label = "NUM";
