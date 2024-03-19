@@ -99,7 +99,7 @@
 &kp LEFT_PARENTHESIS  &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp RIGHT_PARENTHESIS
 &kp LBKT              &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp RBKT
 &kp GRAVE             &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp PIPE
-                                                 &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &nav_edit     &mo 3
+                                                 &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &nav_edit     &lt 3 ESC
             >;
 
             label = "BASE";
