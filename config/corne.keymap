@@ -49,11 +49,13 @@
             tapping-term-ms = <300>;
         };
 
-        tdl: tdl {
+        nav_edit: nav_edit {
             compatible = "zmk,behavior-tap-dance";
-            label = "tdl";
+            label = "NAV → EDIT";
             #binding-cells = <0>;
             bindings = <&mo 1>, <&mo 2>;
+
+            tapping-term-ms = <350>;
         };
 
         htl: htl {
@@ -94,10 +96,10 @@
 
             display-name = "Base";
             bindings = <
-&kp LEFT_PARENTHESIS  &kp Q         &kp W        &kp F        &kp P         &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp RIGHT_PARENTHESIS
-&kp LBKT              &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T  &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp RBKT
-&kp GRAVE             &kp Z         &kp X        &kp C        &kp D         &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp PIPE
-                                                 &kp TAB      &del          &kp SPACE    &kp RET  &tdl          &mo 2
+&kp LEFT_PARENTHESIS  &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp RIGHT_PARENTHESIS
+&kp LBKT              &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp RBKT
+&kp GRAVE             &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp PIPE
+                                                 &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &nav_edit     &mo 3
             >;
 
             label = "BASE";
@@ -105,10 +107,10 @@
 
         NAV {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &trans
-                        &trans  &del    &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
+&trans  &trans  &trans  &trans  &trans   &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans    &trans     &trans     &trans     &trans
+                        &trans  &kp DEL  &trans    &trans  &trans    &trans
             >;
 
             label = "NAV";
