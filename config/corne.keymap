@@ -71,12 +71,6 @@
     combos {
         compatible = "zmk,combos";
 
-        CTRL_EDIT {
-            bindings = <&mo 2>;
-            key-positions = <19 40>;
-            layers = <0>;
-        };
-
         CAPS_WORD {
             bindings = <&caps_word>;
             key-positions = <13 22>;
@@ -135,10 +129,10 @@
 
         NAV {
             bindings = <
-&trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
-&trans  &trans  &trans  &trans  &trans   &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans   &trans    &trans  &trans    &trans     &trans     &trans     &trans
-                        &trans  &kp DEL  &trans    &trans  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &trans
+                        &trans  &trans  &trans    &trans  &trans    &trans
             >;
 
             label = "NAV";
@@ -146,10 +140,10 @@
 
         EDIT {
             bindings = <
-&trans  &trans  &trans      &kp K_FIND  &kp K_PASTE  &trans    &trans  &trans        &kp K_UNDO    &kp K_COPY  &trans         &trans
-&trans  &trans  &kp K_REDO  &trans      &trans       &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans
-&trans  &trans  &kp K_CUT   &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans        &trans        &trans      &trans         &trans
-                            &trans      &del         &trans    &trans  &trans        &trans
+&trans  &trans  &trans     &kp K_FIND  &kp K_PASTE  &trans    &trans  &trans        &kp K_UNDO    &kp K_COPY  &trans         &trans
+&trans  &trans  &trans     &trans      &trans       &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans
+&trans  &trans  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans        &trans        &trans      &trans         &trans
+                           &trans      &del         &trans    &trans  &trans        &trans
             >;
 
             label = "EDIT";
@@ -157,10 +151,10 @@
 
         NUM {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N7  &kp N8  &kp N9  &kp GRAVE  &kp EQUAL
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N4  &kp N5  &kp N6  &trans     &kp LS(RPAR)
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp N1  &kp N2  &kp N3  &trans     &kp AMPERSAND
-                        &trans  &trans  &trans    &trans  &trans  &trans
+&trans  &kp LS(EXCL)  &kp LS(AT)  &kp LS(POUND)  &kp LS(DLLR)  &kp LS(PRCNT)    &kp LS(CARET)  &kp LS(AMPS)  &kp LS(STAR)  &kp LS(LPAR)  &kp LS(RPAR)  &kp EQUAL
+&trans  &kp N1        &kp N2      &kp N3         &kp N4        &kp N5           &kp N6         &kp N7        &kp N8        &kp N9        &kp N0        &kp COLON
+&trans  &trans        &trans      &trans         &trans        &trans           &trans         &trans        &trans        &trans        &kp TILDE     &kp AMPERSAND
+                                  &trans         &kp DEL       &trans           &trans         &trans        &trans
             >;
 
             label = "NUM";
