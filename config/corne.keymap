@@ -121,7 +121,7 @@
             display-name = "Base";
             bindings = <
 &round   &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp SEMI
-&square  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &trans
+&square  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &key_repeat
 &curly   &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp MINUS    &dot         &kp FSLH      &kp PIPE
                                     &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &motd         &lt 3 ESC
             >;
