@@ -57,6 +57,15 @@
 
             mods = <(MOD_LSFT|MOD_RSFT)>;
         };
+
+        bracket: bracket {
+            compatible = "zmk,behavior-mod-morph";
+            label = "BRACKET";
+            bindings = <&square>, <&curly>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT|MOD_RSFT)>;
+        };
     };
 
     combos {
