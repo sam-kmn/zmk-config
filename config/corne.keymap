@@ -35,7 +35,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "MO (tap-dance)";
             #binding-cells = <0>;
-            bindings = <&mo 1>, <&mo 2>;
+            bindings = <&mo 1>, <&mo 0>;
 
             tapping-term-ms = <350>;
         };
@@ -84,7 +84,7 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>, <&macro_tap>;
 
-            label = "CURLY";
+            label = "{}";
         };
 
         round: round {
@@ -94,7 +94,7 @@
                 <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>,
                 <&macro_tap>;
 
-            label = "ROUND";
+            label = "()";
         };
 
         square: square {
@@ -104,7 +104,15 @@
                 <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>,
                 <&macro_tap>;
 
-            label = "SQUARE";
+            label = "[]";
+        };
+
+        angle: angle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>, <&macro_tap>;
+
+            label = "ANGLE";
         };
     };
 
@@ -120,46 +128,24 @@
 
             display-name = "Base";
             bindings = <
-&round   &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp SQT       &kp SEMI
-&square  &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &key_repeat
-&curly   &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp MINUS    &dot         &kp FSLH      &kp PIPE
-                                    &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &motd         &lt 3 ESC
+&round     &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp MINUS     &kp EQUAL
+&curly     &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp SQT
+&kp GLOBE  &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp PIPE
+                                      &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &mo 1         &trans
             >;
 
             label = "BASE";
         };
 
-        NAV {
+        EXT {
             bindings = <
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &kp PG_DN  &kp PG_UP  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN   &kp UP     &kp RIGHT  &to 1
-&trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans     &trans     &trans     &trans
-                        &trans  &trans  &trans    &trans  &trans    &trans
+&angle   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &kp PLUS
+&square  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp GRAVE
+&trans   &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans  &kp TILDE  &kp AMPERSAND
+                         &trans  &trans  &trans    &trans  &trans    &trans
             >;
 
-            label = "NAV";
-        };
-
-        EDIT {
-            bindings = <
-&trans  &trans  &trans     &kp K_FIND  &kp K_PASTE  &trans    &trans  &trans        &kp K_UNDO    &kp K_COPY  &trans         &trans
-&trans  &trans  &trans     &trans      &trans       &trans    &trans  &kp LS(LEFT)  &kp LS(DOWN)  &kp LS(UP)  &kp LS(RIGHT)  &trans
-&trans  &trans  &kp K_CUT  &kp K_COPY  &kp K_PASTE  &trans    &trans  &trans        &trans        &trans      &trans         &trans
-                           &trans      &bsdel       &trans    &trans  &trans        &trans
-            >;
-
-            label = "EDIT";
-        };
-
-        NUM {
-            bindings = <
-&trans  &kp EXCLAMATION  &kp AT_SIGN  &kp POUND  &kp DOLLAR  &kp PERCENT    &kp CARET  &kp AMPERSAND  &kp ASTERISK  &trans  &kp GRAVE  &kp COLON
-&trans  &kp N1           &kp N2       &kp N3     &kp N4      &kp N5         &kp N6     &kp N7         &kp N8        &kp N9  &kp N0     &to 3
-&trans  &trans           &trans       &trans     &trans      &trans         &trans     &trans         &kp EQUAL     &trans  &kp TILDE  &kp AMPERSAND
-                                      &trans     &kp DEL     &trans         &trans     &trans         &trans
-            >;
-
-            label = "NUM";
+            label = "EXT";
         };
     };
 };
