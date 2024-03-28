@@ -22,15 +22,6 @@
             hold-trigger-on-release;
         };
 
-        bsdel: bsdel {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BS | DEL(CTRL)";
-            bindings = <&kp BACKSPACE>, <&kp DEL>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LCTL|MOD_RCTL)>;
-        };
-
         motd: motd {
             compatible = "zmk,behavior-tap-dance";
             label = "MO (tap-dance)";
@@ -49,22 +40,12 @@
             tapping-term-ms = <200>;
         };
 
-        dot: dot {
-            compatible = "zmk,behavior-mod-morph";
-            label = "coma | dot (soft)";
+        numword: numword {
+            compatible = "zmk,behavior-caps-word";
+            label = "caps-word (numbers)";
             #binding-cells = <0>;
-            bindings = <&kp COMMA>, <&kp DOT>;
-
-            mods = <(MOD_LSFT|MOD_RSFT)>;
-        };
-
-        bracket: bracket {
-            compatible = "zmk,behavior-mod-morph";
-            label = "BRACKET";
-            bindings = <&square>, <&curly>;
-
-            #binding-cells = <0>;
-            mods = <(MOD_LSFT|MOD_RSFT)>;
+            continue-list = <N1 N2 N3 N4 N5 N6 N7 N8 N9 N0>;
+            mods = <(MOD_LSFT)>;
         };
     };
 
@@ -131,7 +112,7 @@
 &round     &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp MINUS     &kp EQUAL
 &curly     &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp SQT
 &kp GLOBE  &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp COMMA    &kp DOT      &kp FSLH      &kp PIPE
-                                      &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &mo 1         &trans
+                                      &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &mo 1         &kp ESC
             >;
 
             label = "BASE";
@@ -139,10 +120,10 @@
 
         EXT {
             bindings = <
-&angle   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &kp PLUS
-&square  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp GRAVE
-&trans   &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans  &kp TILDE  &kp AMPERSAND
-                         &trans  &trans  &trans    &trans  &trans    &trans
+&angle    &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7    &kp N8    &kp N9  &kp N0     &kp PLUS
+&square   &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp UP  &kp RIGHT  &kp GRAVE
+&numword  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans  &kp TILDE  &kp AMPERSAND
+                          &trans  &trans  &trans    &trans  &trans    &trans
             >;
 
             label = "EXT";
