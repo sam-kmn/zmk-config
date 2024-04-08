@@ -5,7 +5,7 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
 / {
@@ -40,6 +40,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <200>;
         };
+
+        hold3s: hold3s {
+            compatible = "zmk,behavior-hold-tap";
+            label = "Hold 3s > Toggle layer";
+            bindings = <&tog>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <3000>;
+        };
     };
 
     combos {
@@ -48,12 +57,6 @@
         CAPS_WORD {
             bindings = <&caps_word>;
             key-positions = <13 22>;
-            layers = <0>;
-        };
-
-        SHFT_TGL {
-            bindings = <&kt LSHFT>;
-            key-positions = <13 40>;
             layers = <0>;
         };
     };
@@ -99,7 +102,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        BASE {
+        COLEMAK {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -114,18 +117,27 @@
                                       &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &mo 1         &gresc
             >;
 
-            label = "BASE";
+            label = "COLEMAK";
         };
 
-        EXT {
+        NAVI {
             bindings = <
-&angle   &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7       &kp N8      &kp N9     &kp N0     &kp PLUS
-&square  &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT  &trans
-&trans   &trans  &trans  &trans  &trans  &trans    &trans  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp TILDE  &kp AMPERSAND
-                         &trans  &trans  &trans    &trans  &trans       &trans
+&angle           &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7       &kp N8      &kp N9     &kp N0     &kp PLUS
+&square          &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT  &trans
+&hold3s 2 GLOBE  &trans  &trans  &trans  &trans  &trans    &trans  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp TILDE  &kp AMPERSAND
+                                 &trans  &trans  &trans    &trans  &trans       &trans
             >;
 
-            label = "EXT";
+            label = "NAVI";
+        };
+
+        CONF {
+            bindings = <
+&bt BT_NXT  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&bt BT_CLR  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+&to 0       &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                            &trans  &trans  &trans    &trans  &trans  &trans
+            >;
         };
     };
 };
