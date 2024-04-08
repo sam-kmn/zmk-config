@@ -12,7 +12,6 @@
     behaviors {
         hrm: hrm {
             compatible = "zmk,behavior-hold-tap";
-            label = "Homerow Mods";
             bindings = <&kp>, <&kp>;
 
             #binding-cells = <2>;
@@ -25,7 +24,6 @@
 
         motd: motd {
             compatible = "zmk,behavior-tap-dance";
-            label = "MO (tap-dance)";
             #binding-cells = <0>;
             bindings = <&mo 1>, <&mo 0>;
 
@@ -34,7 +32,6 @@
 
         moto: moto {
             compatible = "zmk,behavior-hold-tap";
-            label = "MO(hold) | TO(tap)";
             bindings = <&mo>, <&to>;
 
             #binding-cells = <2>;
@@ -43,7 +40,6 @@
 
         hold3s: hold3s {
             compatible = "zmk,behavior-hold-tap";
-            label = "Hold 3s > Toggle layer";
             bindings = <&tog>, <&kp>;
 
             #binding-cells = <2>;
@@ -67,7 +63,6 @@
             #binding-cells = <0>;
             bindings = <&kp LEFT_BRACE &kp RIGHT_BRACE &kp LEFT>, <&macro_tap>;
 
-            label = "{}";
         };
 
         round: round {
@@ -77,7 +72,6 @@
                 <&kp LEFT_PARENTHESIS &kp RIGHT_PARENTHESIS &kp LEFT>,
                 <&macro_tap>;
 
-            label = "()";
         };
 
         square: square {
@@ -87,7 +81,6 @@
                 <&kp LEFT_BRACKET &kp RIGHT_BRACKET &kp LEFT>,
                 <&macro_tap>;
 
-            label = "[]";
         };
 
         angle: angle {
@@ -95,7 +88,6 @@
             #binding-cells = <0>;
             bindings = <&kp LESS_THAN &kp GREATER_THAN &kp LEFT>, <&macro_tap>;
 
-            label = "ANGLE";
         };
     };
 
@@ -109,7 +101,6 @@
             // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
             //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
 
-            display-name = "Base";
             bindings = <
 &round     &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp MINUS     &kp EQUAL
 &curly     &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp SEMI
@@ -117,7 +108,7 @@
                                       &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &mo 1         &gresc
             >;
 
-            label = "COLEMAK";
+            display-name = "COLEMAK";
         };
 
         NAVI {
@@ -128,7 +119,7 @@
                                  &trans  &trans  &trans    &trans  &trans       &trans
             >;
 
-            label = "NAVI";
+            display-name = "NAVI";
         };
 
         CONF {
@@ -138,6 +129,7 @@
 &to 0       &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
                             &trans  &trans  &trans    &trans  &trans  &trans
             >;
+            display-name = "BT";
         };
     };
 };
