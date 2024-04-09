@@ -94,7 +94,7 @@
     keymap {
         compatible = "zmk,keymap";
 
-        COLEMAK {
+        COLMAK {
             // -----------------------------------------------------------------------------------------
             // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
             // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
@@ -105,10 +105,10 @@
 &round     &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp MINUS     &kp EQUAL
 &curly     &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp SEMI
 &kp GLOBE  &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp SQT      &kp DOT      &kp FSLH      &kp PIPE
-                                      &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &mo 1         &gresc
+                                      &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &mo 1         &mt LS(LA(LC(LGUI))) ESC
             >;
 
-            display-name = "COLEMAK";
+            display-name = "COLMAK";
         };
 
         NAVI {
