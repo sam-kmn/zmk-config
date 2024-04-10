@@ -95,41 +95,33 @@
         compatible = "zmk,keymap";
 
         COLMAK {
-            // -----------------------------------------------------------------------------------------
-            // |  TAB |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  | BKSP |
-            // | CTRL |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |  '   |
-            // | SHFT |  Z  |  X  |  C  |  V  |  B  |   |  N  |  M   |  ,  |  .  |  /  | ESC  |
-            //                    | GUI | LWR | SPC |   | ENT | RSE  | ALT |
-
-            bindings = <
-&round     &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J    &kp L         &kp U        &kp Y        &kp MINUS     &kp EQUAL
-&curly     &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M    &hrm RCTRL N  &hrm RCMD E  &hrm RALT I  &hrm RSHFT O  &kp SEMI
-&kp GLOBE  &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K    &kp H         &kp SQT      &kp DOT      &kp FSLH      &kp PIPE
-                                      &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET  &mo 1         &mt LS(LA(LCTRL)) ESC
-            >;
-
             display-name = "COLMAK";
+            bindings = <
+                &round     &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J     &kp L         &kp U        &kp Y          &kp MINUS     &kp EQUAL
+                &curly     &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M     &hrm RCTRL N  &hrm RCMD E  &hrm RALT I    &hrm RSHFT O  &kp SEMI
+                &caps_word &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K     &kp H         &kp SQT      &mt DOT COMMA  &kp FSLH      &kp PIPE
+                                                    &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET   &mo 1         &mt LS(LA(LCTRL)) ESC
+            >;
         };
 
         NAVI {
-            bindings = <
-&angle           &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7       &kp N8      &kp N9     &kp N0     &kp PLUS
-&square          &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT  &trans
-&hold3s 2 GLOBE  &trans  &trans  &trans  &trans  &trans    &trans  &kp K_PASTE  &kp K_COPY  &kp K_CUT  &kp TILDE  &kp AMPERSAND
-                                 &trans  &trans  &trans    &trans  &trans       &trans
-            >;
-
             display-name = "NAVI";
+            bindings = <
+                &angle           &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7       &kp N8      &kp N9     &kp N0     &kp PLUS
+                &square          &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT  &trans
+                &hold3s 2 GLOBE  &trans  &trans  &trans  &trans  &trans    &trans  &kp K_CUT    &kp K_COPY  &kp K_PASTE  &kp TILDE  &kp AMPERSAND
+                                                 &trans  &trans  &trans    &trans  &trans       &trans
+            >;
         };
 
         CONF {
-            bindings = <
-&bt BT_NXT  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&bt BT_CLR  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-&to 0       &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
-                            &trans  &trans  &trans    &trans  &trans  &trans
-            >;
             display-name = "BT";
+            bindings = <
+                &bt BT_NXT  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                &bt BT_CLR  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                &to 0       &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans  &trans
+                                            &trans  &trans  &trans    &trans  &trans  &trans
+            >;
         };
     };
 };
