@@ -45,6 +45,15 @@
             #binding-cells = <2>;
             tapping-term-ms = <3000>;
         };
+
+        dot: dot {
+            compatible = "zmk,behavior-mod-morph";
+            label = "DOT";
+            bindings = <&kp COMMA>, <&kp DOT>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LSFT)>;
+        };
     };
 
     combos {
@@ -99,7 +108,7 @@
             bindings = <
                 &round     &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J     &kp L         &kp U        &kp Y          &kp MINUS     &kp EQUAL
                 &curly     &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M     &hrm RCTRL N  &hrm RCMD E  &hrm RALT I    &hrm RSHFT O  &kp SEMI
-                &caps_word &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K     &kp H         &kp SQT      &mt DOT COMMA  &kp FSLH      &kp PIPE
+                &caps_word &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K     &kp H         &kp SQT      &dot           &kp FSLH      &kp PIPE
                                                       &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET   &mo 1         &mt LS(LA(LCTRL)) ESC
             >;
         };
