@@ -100,17 +100,17 @@
                 &round     &kp Q         &kp W        &kp F        &kp P          &kp B        &kp J     &kp L         &kp U        &kp Y          &kp MINUS     &kp EQUAL
                 &curly     &hrm LSHFT A  &hrm LALT R  &hrm LCMD S  &hrm LCTRL T   &kp G        &kp M     &hrm RCTRL N  &hrm RCMD E  &hrm RALT I    &hrm RSHFT O  &kp SEMI
                 &caps_word &kp Z         &kp X        &kp C        &kp D          &kp V        &kp K     &kp H         &kp SQT      &mt DOT COMMA  &kp FSLH      &kp PIPE
-                                                    &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET   &mo 1         &mt LS(LA(LCTRL)) ESC
+                                                      &kp TAB      &kp BACKSPACE  &kp SPACE    &kp RET   &mo 1         &mt LS(LA(LCTRL)) ESC
             >;
         };
 
         NAVI {
             display-name = "NAVI";
             bindings = <
-                &angle           &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7       &kp N8      &kp N9     &kp N0     &kp PLUS
-                &square          &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT     &kp DOWN    &kp UP     &kp RIGHT  &trans
-                &hold3s 2 GLOBE  &trans  &trans  &trans  &trans  &trans    &trans  &kp K_CUT    &kp K_COPY  &kp K_PASTE  &kp TILDE  &kp AMPERSAND
-                                                 &trans  &trans  &trans    &trans  &trans       &trans
+                &angle           &kp N1  &kp N2  &kp N3  &kp N4  &kp N5    &kp N6  &kp N7    &kp N8    &kp N9    &kp N0     &kp PLUS
+                &square          &trans  &trans  &trans  &trans  &trans    &trans  &kp LEFT  &kp DOWN  &kp UP    &kp RIGHT  &trans
+                &hold3s 2 GLOBE  &trans  &trans  &trans  &trans  &trans    &trans  &trans    &trans    &trans    &kp TILDE  &kp AMPERSAND
+                                                 &trans  &trans  &trans    &trans  &trans    &trans
             >;
         };
 
